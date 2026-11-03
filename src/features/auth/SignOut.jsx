@@ -32,7 +32,7 @@ function SignOut() {
   return (
     <StyledButton onClick={signOut} disabled={isLoadingSignOut}>
       <LogOutIcon size="20" />
-      Sign out
+      Sair
     </StyledButton>
   );
 }

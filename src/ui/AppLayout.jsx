@@ -8,12 +8,21 @@ const StyledAppLayout = styled.div`
   grid-template-columns: 24rem 1fr;
   grid-template-rows: auto 1fr;
   height: 100dvh;
+
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
 `;
 
 const AppMain = styled.main`
   background-color: var(--bg-subtle);
   overflow: auto;
   padding: 3.2rem;
+
+  @media (max-width: 760px) {
+    padding: 1.6rem;
+  }
 `;
 
 function AppLayout() {

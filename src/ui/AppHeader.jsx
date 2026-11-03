@@ -16,6 +16,11 @@ const StyledAppHeader = styled.header`
   flex-flow: row nowrap;
   justify-content: space-between;
   padding: 0.8rem 3.2rem;
+
+  @media (max-width: 760px) {
+    gap: 1.2rem;
+    padding: 0.8rem 1.6rem;
+  }
 `;
 
 function AppHeader() {

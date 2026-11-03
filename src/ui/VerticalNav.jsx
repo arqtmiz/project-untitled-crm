@@ -6,6 +6,12 @@ const StyledNav = styled.nav`
   flex-flow: column nowrap;
   flex: 1;
   justify-content: space-between;
+
+  @media (max-width: 760px) {
+    flex-flow: row wrap;
+    gap: 0.4rem;
+    justify-content: start;
+  }
 `;
 
 const NavList = styled.ul`
@@ -15,6 +21,15 @@ const NavList = styled.ul`
 
   &:not(:last-child) {
     margin-bottom: 1.6rem;
+  }
+
+  @media (max-width: 760px) {
+    flex-flow: row wrap;
+    gap: 0.4rem;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
   }
 `;
 
