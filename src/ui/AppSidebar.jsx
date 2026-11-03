@@ -2,6 +2,7 @@ import { styled } from 'styled-components';
 import {
   CircleDollarSign,
   LayoutDashboard,
+  ShieldCheck,
   Settings,
   Users,
 } from 'lucide-react';
@@ -19,6 +20,15 @@ const StyledAppSidebar = styled.aside`
   justify-content: space-between;
   overflow-y: auto;
   padding: 1.6rem;
+
+  @media (max-width: 760px) {
+    border-bottom: 1px solid var(--border-non-interactive);
+    border-right: none;
+    gap: 0.8rem;
+    grid-row: auto;
+    overflow: visible;
+    padding: 1.2rem 1.6rem;
+  }
 `;
 
 const AppSidebarLogo = styled(Logo)`
@@ -38,15 +48,21 @@ function AppSidebar() {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/workspace/consulta">
+              <ShieldCheck size="20" />
+              <span>Consulta sanitária</span>
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/workspace/contacts">
               <Users size="20" />
-              <span>Contacts</span>
+              <span>Pesquisados</span>
             </NavLink>
           </li>
           <li>
             <NavLink to="/workspace/deals">
               <CircleDollarSign size="20" />
-              <span>Deals</span>
+              <span>Pesquisas</span>
             </NavLink>
           </li>
         </NavList>
@@ -54,7 +70,7 @@ function AppSidebar() {
           <li>
             <NavLink to="/workspace/settings">
               <Settings size="20" />
-              <span>Settings</span>
+              <span>Configurações</span>
             </NavLink>
           </li>
           <li>

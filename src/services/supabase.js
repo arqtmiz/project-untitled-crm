@@ -1,8 +1,16 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = 'https://fvgaaqkrpcdhfcyvtodb.supabase.co';
-const supabaseKey =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ2Z2FhcWtycGNkaGZjeXZ0b2RiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTIyODA0OTYsImV4cCI6MjAwNzg1NjQ5Nn0.-8F9KElQYw3rn12wvA8Gr-t7L8ymLyCj1Jgz6s_SLcM';
+// Credenciais do projeto Supabase do SanitaCRM.
+// Definidas no arquivo .env (veja .env.example) — nunca fixas no código.
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error(
+    'Configure VITE_SUPABASE_URL e VITE_SUPABASE_ANON_KEY no arquivo .env (veja .env.example).',
+  );
+}
+
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default supabase;

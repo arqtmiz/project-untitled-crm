@@ -8,6 +8,8 @@ import ProtectedRoute from './ui/ProtectedRoute';
 import SettingsLayout from './ui/SettingsLayout';
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
+import Consulta from './pages/Consulta';
+import FichaCnae from './pages/FichaCnae';
 import Contacts from './pages/Contacts';
 import Contact from './pages/Contact';
 import Deals from './pages/Deals';
@@ -45,6 +47,8 @@ function App() {
               }>
               <Route index element={<Navigate replace to="dashboard" />} />
               <Route path="dashboard" element={<Dashboard />} />
+              <Route path="consulta" element={<Consulta />} />
+              <Route path="consulta/:codigo" element={<FichaCnae />} />
               <Route path="contacts" element={<Contacts />} />
               <Route path="contacts/:contactId" element={<Contact />} />
               <Route path="deals" element={<Deals />} />
